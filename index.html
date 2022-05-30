@@ -1,0 +1,36 @@
+<!-- Important: ! + tab create html basic structure -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3"></script>
+    <title>Vue3</title>
+</head>
+<body>
+    <!-- <div id="app2">
+        <h1>Holardo</h1>
+        <p>{{ message }}</p>
+        <blockquote>{{ quote }}</blockquote>
+        <button v-on:click="changeQuote">Cambiar quote</button>
+    </div> -->
+    <div id="app3">
+        <h1>Batman Quotes</h1>
+
+        <input type="text" v-model="newQuote" v-on:keypress.enter="onAddQuote" />
+        <hr/>
+
+        <ul>
+            <li v-for="({ quote, author }, index) in quotes">
+                {{ index }}{{ quote }}
+                <small v-if="author && author !== ''"> - {{ author }}</small>
+                <!-- Show or display none -->
+                <small v-show="author"> - {{ author }}</small>
+            </li>
+        </ul>
+    </div>
+    <!-- <script src="app2.js"></script> -->
+    <script src="app3.js"></script>
+</body>
+</html>
